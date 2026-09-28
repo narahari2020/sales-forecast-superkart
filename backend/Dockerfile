@@ -9,6 +9,8 @@ COPY . .
 # Install dependencies from the requirements file without using cache to reduce image size
 RUN pip install --no-cache-dir -r requirements.txt
 
+EXPOSE 7860
+
 # Define the command to start the application using Gunicorn with 4 worker processes
 # - `-w 4`: Uses 4 worker processes for handling requests
 # - `-b 0.0.0.0:7860`: Binds the server to port 7860 on all network interfaces
